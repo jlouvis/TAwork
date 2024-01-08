@@ -57,13 +57,11 @@ def evaluate(model_checkpoint):
     # TODO: Implement evaluation logic here
     model = torch.load(model_checkpoint)
     _, test_set = mnist()
-    test_dataloader = torch.utils.data.DataLoader(
-        test_set, batch_size=64, shuffle=False
-    )
+    test_dataloader = torch.utils.data.DataLoader(test_set, batch_size=64, shuffle=False)
     model.eval()
 
-    test_preds = [ ]
-    test_labels = [ ]
+    test_preds = []
+    test_labels = []
     with torch.no_grad():
         for batch in test_dataloader:
             x, y = batch

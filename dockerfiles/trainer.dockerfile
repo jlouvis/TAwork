@@ -22,4 +22,3 @@ RUN pip install -e . --no-cache-dir
 
 # Set the entrypoint for the Docker image
 ENTRYPOINT ["python", "-u", "src/models/train_model.py"]
-
